@@ -52,9 +52,10 @@ Container Registry is used to store private Docker images, which are deployed to
 | `vm_size_node_pool` | VM Size of the node pool | Standard_D2s_v3 | 
 | `node_pool_min_count` | VM minimum amount of nodes for the node pool | 3 | 
 | `node_pool_max_count` | VM maximum amount of nodes for the node pool | 5 | 
-| `helm_pod_identity_version` | Helm chart version of aad-pod-identity | 3.0.3 | 
-| `helm_csi_secrets_version` | Helm chart version of secrets-store-csi-driver-provider-azure | 0.0.17 | 
+| `helm_pod_identity_version` | Helm chart version of aad-pod-identity | 4.1.1 | 
+| `helm_csi_secrets_version` | Helm chart version of secrets-store-csi-driver-provider-azure | 0.0.18 | 
 | `helm_agic_version` | Helm chart version of ingress-azure-helm-package | 1.4.0 | 
+| `helm_keda_version` | Helm chart version of keda helm package | 2.3.2 | 
 
 ## Output variables
 
