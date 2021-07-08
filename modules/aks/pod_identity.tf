@@ -119,7 +119,7 @@ resource "helm_release" "keda" {
   repository = "https://kedacore.github.io/charts"
   chart = "keda"
   namespace = "keda"
-  version = "2.3.2"
+  version = var.helm_keda_version
 
   set {
     name = "podIdentity.activeDirectory.identity"

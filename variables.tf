@@ -21,7 +21,7 @@ variable "domain_name_label" {
 variable "kubernetes_version" {
   type        = string
   description = "Kubernetes version of the node pool"
-  default     = "1.19.7"
+  default     = "1.20.7"
 }
 
 variable "vm_size_node_pool" {
@@ -47,17 +47,23 @@ variable "node_pool_max_count" {
 variable "helm_pod_identity_version" {
   type        = string
   description = "Helm chart version of aad-pod-identity"
-  default     = "3.0.3"
+  default     = "4.1.1"
 }
 
 variable "helm_csi_secrets_version" {
   type        = string
   description = "Helm chart version of secrets-store-csi-driver-provider-azure"
-  default     = "0.0.17"
+  default     = "0.0.18"
 }
 
 variable "helm_agic_version" {
   type        = string
   description = "Helm chart version of ingress-azure-helm-package"
   default     = "1.4.0"
+}
+
+variable "helm_keda_version" {
+  type        = string
+  description = "Helm chart version of keda helm package"
+  default     = "2.3.2"
 }
