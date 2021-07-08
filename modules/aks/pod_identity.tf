@@ -113,3 +113,16 @@ resource "helm_release" "csi-secrets-store-provider-azure" {
   # The provider checks if it actually has access to the key vault
   depends_on = [azurerm_key_vault_access_policy.kv_podidentity_access_policy]
 }
+
+resource "helm_release" "keda" {
+  name = "keda"
+  repository = "https://kedacore.github.io/charts"
+  chart = "keda"
+  namespace = "keda"
+  version = "2.3.2"
+
+  set {
+    name = "podIdentity.activeDirectory.identity"
+    value = local.podidentity_binding_name
+  }
+}
