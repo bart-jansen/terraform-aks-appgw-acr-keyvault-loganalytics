@@ -39,3 +39,9 @@ output "rg_name" {
   value       = module.resource_group.name
   description = "Name of the Resource Group"
 }
+
+output "rg_location" {
+  value       = module.resource_group.location
+  description = "Location of the Resource Group"
+}
+
