@@ -40,6 +40,8 @@ Azure Active Directory (Azure AD) is Microsoft's cloud-based identity and access
 __Azure Container Registry__ —
 Container Registry is used to store private Docker images, which are deployed to the cluster. AKS can authenticate with Container Registry using its Azure AD identity.
 
+__KEDA__ —
+KEDA is a Kubernetes-based Event Driven Autoscaler that (horizontally) scales a container by adding additional pods based on the number of events needing to be processed.
 
 ## Input Variables
 
