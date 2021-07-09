@@ -39,8 +39,8 @@ resource "helm_release" "aad_pod_id" {
     EOF
   ]
   depends_on = [
-    azurerm_role_assignment.vm_contributor, 
-    azurerm_role_assignment.all_mi_operator, 
+    azurerm_role_assignment.vm_contributor,
+    azurerm_role_assignment.all_mi_operator,
     azurerm_role_assignment.mi_operator_podidentity
   ]
 }
@@ -114,15 +114,22 @@ resource "helm_release" "csi-secrets-store-provider-azure" {
   depends_on = [azurerm_key_vault_access_policy.kv_podidentity_access_policy]
 }
 
+# Install KEDA on AKS cluster
+resource "kubernetes_namespace" "keda_ns" {
+  metadata {
+    name = "keda"
+  }
+}
+
 resource "helm_release" "keda" {
-  name = "keda"
+  name       = "keda"
   repository = "https://kedacore.github.io/charts"
-  chart = "keda"
-  namespace = "keda"
-  version = var.helm_keda_version
+  chart      = "keda"
+  namespace  = kubernetes_namespace.keda_ns.metadata.0.name
+  version    = var.helm_keda_version
 
   set {
-    name = "podIdentity.activeDirectory.identity"
+    name  = "podIdentity.activeDirectory.identity"
     value = local.podidentity_binding_name
   }
 }

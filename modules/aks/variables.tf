@@ -68,3 +68,7 @@ variable "helm_csi_secrets_version" {
   description = "Helm chart version of secrets-store-csi-driver-provider-azure"
 }
 
+variable "helm_keda_version" {
+  type        = string
+  description = "Helm chart version of KEDA"
+}

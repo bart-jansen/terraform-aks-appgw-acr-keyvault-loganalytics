@@ -90,6 +90,7 @@ module "aks" {
   ### Helm Chart versions ###
   helm_pod_identity_version = var.helm_pod_identity_version
   helm_csi_secrets_version  = var.helm_csi_secrets_version
+  helm_keda_version         = var.helm_keda_version
 }
 
 
