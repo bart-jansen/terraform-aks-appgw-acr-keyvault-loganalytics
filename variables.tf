@@ -21,7 +21,7 @@ variable "domain_name_label" {
 variable "kubernetes_version" {
   type        = string
   description = "Kubernetes version of the node pool"
-  default     = "1.20.7"
+  default     = "1.21.7"
 }
 
 variable "vm_size_node_pool" {
